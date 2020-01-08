@@ -1,9 +1,5 @@
 ﻿using NoRe.Core;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NoRe.Database.SqLite
 {
@@ -26,6 +22,7 @@ namespace NoRe.Database.SqLite
         public string Pwd { get; set; }
 
         public SqLiteConfiguration() : base(System.IO.Path.Combine(Pathmanager.ConfigurationDirectory, "SqLiteConfiguration.xml")) { }
+        public SqLiteConfiguration(string path) : base(path) { } 
 
         public override void Read()
         {

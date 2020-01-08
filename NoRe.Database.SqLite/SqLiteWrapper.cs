@@ -43,9 +43,10 @@ namespace NoRe.Database.SqLite
         /// Creats and loads the connection string from the configuration file
         /// Throws an exception if the database is not reachable
         /// </summary>
-        public SqLiteWrapper()
+        public SqLiteWrapper(string configurationPath = "")
         {
             Configuration = new SqLiteConfiguration();
+            if (!string.IsNullOrEmpty(configurationPath)) Configuration = new SqLiteConfiguration(configurationPath);
             Configuration.Read();
 
             Connection = new SQLiteConnection(Configuration.ToString());
