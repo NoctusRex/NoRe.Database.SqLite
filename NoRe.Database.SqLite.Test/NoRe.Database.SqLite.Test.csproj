@@ -52,11 +52,11 @@
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.2.0.0\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="NoRe.Core">
-      <HintPath>..\..\NoRe.Core\NoRe.Core\bin\Debug\NoRe.Core.dll</HintPath>
+    <Reference Include="NoRe.Core, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NoRe.Core.1.1.0\lib\net48\NoRe.Core.dll</HintPath>
     </Reference>
-    <Reference Include="NoRe.Database.Core">
-      <HintPath>..\..\NoRe.Database.Core\NoRe.Database.Core\bin\Debug\NoRe.Database.Core.dll</HintPath>
+    <Reference Include="NoRe.Database.Core, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NoRe.Database.Core.1.1.0\lib\net48\NoRe.Database.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />

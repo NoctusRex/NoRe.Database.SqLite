@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>NoctusRex</authors>
+    <owners>NoctusRex</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://raw.githubusercontent.com/NoctusRex/NoRe.Database.SqLite/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/NoctusRex/NoRe.Database.SqLite</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/NoctusRex/NoRe.Database.SqLite/master/icon.jpg</iconUrl>
+    <description>$description$</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2020</copyright>
+    <tags>SqLite NoRe NoctusRex Database</tags>
+  </metadata>
+</package>

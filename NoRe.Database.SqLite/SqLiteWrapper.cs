@@ -3,16 +3,20 @@ using NoRe.Database.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NoRe.Database.SqLite
 {
     public class SqLiteWrapper : IDatabase
     {
-        private static SqLiteConfiguration Configuration { get; set; }
+        private SqLiteConfiguration Configuration { get; set; }
+        /// <summary>
+        /// The connection used to access the database
+        /// Is created via the constructor
+        /// </summary>
         public SQLiteConnection Connection { get; set; }
+        /// <summary>
+        /// The transaction used for execute transaction
+        /// </summary>
         public SQLiteTransaction Transaction { get; set; }
 
         /// <summary>
@@ -40,7 +44,7 @@ namespace NoRe.Database.SqLite
 
         /// <summary>
         /// Creates a new MySqlWrapper
-        /// Creats and loads the connection string from the configuration file
+        /// Creates and loads the connection string from the configuration file
         /// Throws an exception if the database is not reachable
         /// </summary>
         public SqLiteWrapper(string configurationPath = "")
@@ -198,7 +202,7 @@ namespace NoRe.Database.SqLite
         }
 
         /// <summary>
-        /// Committs the current transaction and closes the connection
+        /// Commits the current transaction and closes the connection
         /// </summary>
         private void CommitTransaction()
         {
@@ -213,6 +217,7 @@ namespace NoRe.Database.SqLite
                 Transaction = null;
             }
         }
+
         /// <summary>
         /// Starts the current transaction and opens a connection
         /// </summary>
@@ -236,6 +241,10 @@ namespace NoRe.Database.SqLite
 
         }
 
+        /// <summary>
+        /// Returns a prepared command object with the command text and parameters ready to be executed
+        /// </summary>
+        /// <returns></returns>
         private SQLiteCommand GetCommand(string commandText, params object[] parameters)
         {
             SQLiteCommand command = Connection.CreateCommand();
@@ -251,17 +260,22 @@ namespace NoRe.Database.SqLite
             return command;
         }
 
+        /// <summary>
+        /// Disposes the transaction and connection
+        /// </summary>
         public void Dispose()
         {
             if (Transaction != null)
             {
                 Transaction.Dispose();
+                Transaction = null;
             }
 
             if (Connection != null)
             {
                 Connection.Close();
                 Connection.Dispose();
+                Connection = null;
             }
         }
     }
